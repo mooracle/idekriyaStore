@@ -6,11 +6,13 @@ development of the web app will be done in stages. The first stage will serves t
 The documentation will be placed in: 
 
 **PS:**
-Next: create Branch called model we will start the build of POJO entities:
+The initial commit still has Controller and Color to be left behind since this is the part where we only focus on 
+basic functions and components of a online Store.
 
-[GitHUb link](https://github.com/mooracle/giflibrary-hibernate/commit/0768c49702c2437be6e8e2d1b9a57eda983858bb)
+NOTE: WE NEED TO GO BACK HERE FOR CONTROLLERS SETTING LATER!
 
-ENTRY 9!!!
+Next: we will jump first into JPA annotations for both entities (Merchandise and Category) before considering other
+entity which is a transaction
 
 This initial commit in the GitHub focus on the build.gradle and README.md file. Both files are succesfully built and 
 then commited.
