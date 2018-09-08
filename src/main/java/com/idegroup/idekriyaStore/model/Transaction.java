@@ -1,5 +1,8 @@
 package com.idegroup.idekriyaStore.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class will define the model entity Transaction
  * Early stage will consist of basic definition of what transaction is
@@ -13,12 +16,8 @@ public class Transaction {
 
     private Long id;
     private String description;
-    //TODO: yan - please define more clear definition of debitAcc and creditAcc is it String or String[]?
-    private String debitAcc;
-    private String creditAcc;
-    //TODO: yan - is it better if we defined credit and debit in different class to define the transaction better?
-    private Long debitVal;
-    private Long creditVal;
+    private List<DebitAcc> debits = new ArrayList<>();
+    private List<CreditAcc> credits = new ArrayList<>();
 
     /*Default Constructor:*/
 
@@ -42,19 +41,11 @@ public class Transaction {
         this.description = description;
     }
 
-    public Long getDebitVal() {
-        return debitVal;
+    public List<DebitAcc> getDebits() {
+        return debits;
     }
 
-    public void setDebitVal(Long debitVal) {
-        this.debitVal = debitVal;
-    }
-
-    public Long getCreditVal() {
-        return creditVal;
-    }
-
-    public void setCreditVal(Long creditVal) {
-        this.creditVal = creditVal;
+    public List<CreditAcc> getCredits() {
+        return credits;
     }
 }
