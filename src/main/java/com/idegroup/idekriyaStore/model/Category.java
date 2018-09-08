@@ -1,16 +1,23 @@
 package com.idegroup.idekriyaStore.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * this class define */
+
+@Entity
 public class Category {
 
     /*the attributes for a Category:*/
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToMany(mappedBy = "category")/*<- this will map category to merchandise through field called category*/
     private List<Merchandise> merchandises = new ArrayList();
 
     /*Default constructor:*/

@@ -1,19 +1,29 @@
 package com.idegroup.idekriyaStore.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
  * This class represents and entity of Merchandise*/
 
-
+@Entity
 public class Merchandise {
 
     /*attributes of Merchandise:*/
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Lob /*<- Large object to store image files*/
     private byte[] bytes; /*<- to denotes the size of the image of merchandise*/
+
     private String name;
     private String description;
+
+    @ManyToOne /*<- this mapped to Category*/
     private Category category;
+
 //    private LocalDateTime dateUpdated = LocalDateTime.now(); /*<- in the mean time we deactivate this first*/
     private String admin = "You";
     private String hash;
